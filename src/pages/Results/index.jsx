@@ -6,7 +6,7 @@ import AuthContext from "../../context/AuthContext";
 import { useContext } from "react";
 
 const Results = () => {
-    const [auth, setAuth] = useContext(AuthContext);
+  const [auth, setAuth] = useContext(AuthContext);
   const {
     data: places,
     loading,

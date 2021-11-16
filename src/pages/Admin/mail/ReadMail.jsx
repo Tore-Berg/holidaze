@@ -45,7 +45,8 @@ const ReadMail = () => {
                 <strong>Message recieved from</strong> {message.name}
               </h3>
               <p>
-                <strong>Message recieved:</strong> {dateFormat(message.published_at)}
+                <strong>Message recieved:</strong>{" "}
+                {dateFormat(message.published_at)}
               </p>
               <p>
                 <strong>Email Address:</strong> {message.email}

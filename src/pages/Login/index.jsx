@@ -6,7 +6,6 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import AuthContext from "../../context/AuthContext";
-// import ValidationError from "../../components/common/FormError";
 import { BASE_URL, TOKEN_PATH } from "../../components/constants/api";
 
 const schema = yup.object().shape({
@@ -33,8 +32,6 @@ export default function Login() {
 
     try {
       const response = await axios.post(BASE_URL + TOKEN_PATH, data);
-      const token = response.data.jwt;
-      console.log("response", response.data.jwt);
       setAuth(response.data);
       history.push("/admin");
     } catch (error) {
