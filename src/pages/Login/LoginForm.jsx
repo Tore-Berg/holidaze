@@ -7,12 +7,9 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import AuthContext from "../../context/AuthContext";
-import { BASE_URL, TOKEN_PATH } from "../../components/constants/api";
+import { BASE_URL, TOKEN_PATH } from "../../constants/api";
 import FormError from "../../components/common/FormError";
-import {
-  StyledForm,
-  StyledFormWrapper,
-} from "../../components/styles/FormStyle";
+import { StyledForm, StyledFormWrapper } from "../../styles/FormStyle";
 
 const LoginForm = () => {
   const [submitting, setSubmitting] = useState(false);

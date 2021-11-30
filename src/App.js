@@ -12,7 +12,7 @@ import ReadEnquiries from "./pages/Admin/enquiries/";
 import { AuthProvider } from "./context/AuthContext";
 import AddNew from "./pages/Admin/new/AddNew";
 import ReadMail from "./pages/Admin/mail/";
-import GlobalStyles from "./components/styles/Global";
+import GlobalStyles from "./styles/Global";
 
 function App() {
   return (

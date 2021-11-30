@@ -1,15 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-
-const StyledSubHeading = styled.div`
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 100%;
-  margin-top: 100px;
-`;
+import { StyledSubHeading } from "./Heading.styles";
 
 const SubHeading = ({ title }) => {
   return (

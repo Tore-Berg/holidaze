@@ -4,14 +4,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { BASE_URL, MESSAGE_PATH } from "../../components/constants/api";
+import { BASE_URL, MESSAGE_PATH } from "../../constants/api";
 import FormSuccess from "../../components/common/FormSuccess";
 import axios from "axios";
-import {
-  StyledForm,
-  StyledFormWrapper,
-} from "../../components/styles/FormStyle";
-import { Button } from "../../components/styles/Button";
+import { StyledForm, StyledFormWrapper } from "../../styles/FormStyle";
+import { Button } from "../../styles/Button";
 
 const ContactForm = () => {
   const [error, setError] = useState(null);

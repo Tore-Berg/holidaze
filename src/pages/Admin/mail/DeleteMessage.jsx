@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import useAxios from "../../../components/hooks/useAxios";
-import { TrashCan } from "../../../components/styles/Button";
+import useAxios from "../../../hooks/useAxios";
+import { TrashCan } from "../../../styles/Button";
 
 const DeleteMessage = ({ id, updateList }) => {
   const [error, setError] = useState(null);

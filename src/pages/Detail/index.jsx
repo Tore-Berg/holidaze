@@ -1,19 +1,14 @@
 import { useParams } from "react-router-dom";
-import { BASE_URL, ACCOMMODATION_PATH } from "../../components/constants/api";
-import useFetch from "../../components/hooks/useFetch";
+import { BASE_URL, ACCOMMODATION_PATH } from "../../constants/api";
+import useFetch from "../../hooks/useFetch";
 import Enquiry from "../Enquiry";
 import { useState } from "react";
 import DetailsCard from "./DetailsCard";
-import { Button } from "../../components/styles/Button";
-import styled from "styled-components";
+import { Button } from "../../styles/Button";
+import { DetailsWrapper } from "./Details.styles";
 import GoBack from "../../components/common/GoBack";
 import LoaderIndicator from "../../components/common/LoaderIndicator";
 import { Helmet } from "react-helmet";
-
-const DetailsWrapper = styled.div`
-  max-width: 90%;
-  margin: auto;
-`;
 
 const Detail = () => {
   const [isOpen, setIsOpen] = useState(false);

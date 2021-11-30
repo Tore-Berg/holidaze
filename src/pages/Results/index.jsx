@@ -1,6 +1,6 @@
 import React from "react";
-import { BASE_URL, ACCOMMODATION_PATH } from "../../components/constants/api";
-import useFetch from "../../components/hooks/useFetch";
+import { BASE_URL, ACCOMMODATION_PATH } from "../../constants/api";
+import useFetch from "../../hooks/useFetch";
 import Heading from "../../components/layout/headings/Heading";
 import GoBack from "../../components/common/GoBack";
 import LoaderIndicator from "../../components/common/LoaderIndicator";

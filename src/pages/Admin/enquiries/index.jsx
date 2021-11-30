@@ -1,17 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
-import useAxios from "../../../components/hooks/useAxios";
+import useAxios from "../../../hooks/useAxios";
 import { useHistory } from "react-router";
 import AuthContext from "../../../context/AuthContext";
-import { ENQUIRY_PATH } from "../../../components/constants/api";
+import { ENQUIRY_PATH } from "../../../constants/api";
 import DeleteEnquiry from "./DeleteEnquiry";
 import dateFormat from "dateformat";
 import Heading from "../../../components/layout/headings/Heading";
-import { Button, ButtonWrapper } from "../../../components/styles/Button";
+import { Button, ButtonWrapper } from "../../../styles/Button";
 import LoaderIndicator from "../../../components/common/LoaderIndicator";
-import {
-  StyledList,
-  StyledListItem,
-} from "../../../components/styles/MessageList";
+import { StyledList, StyledListItem } from "../../../styles/MessageList";
 import GoBack from "../../../components/common/GoBack";
 import { Helmet } from "react-helmet";
 

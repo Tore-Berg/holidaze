@@ -1,18 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
-import useAxios from "../../../components/hooks/useAxios";
+import useAxios from "../../../hooks/useAxios";
 import { useHistory } from "react-router";
 import AuthContext from "../../../context/AuthContext";
-import { MESSAGE_PATH } from "../../../components/constants/api";
+import { MESSAGE_PATH } from "../../../constants/api";
 import DeleteMessage from "./DeleteMessage";
-import { ButtonWrapper, Button } from "../../../components/styles/Button";
+import { ButtonWrapper, Button } from "../../../styles/Button";
 import dateFormat from "dateformat";
 import Heading from "../../../components/layout/headings/Heading";
 import LoaderIndicator from "../../../components/common/LoaderIndicator";
 import GoBack from "../../../components/common/GoBack";
-import {
-  StyledList,
-  StyledListItem,
-} from "../../../components/styles/MessageList";
+import { StyledList, StyledListItem } from "../../../styles/MessageList";
 import { Helmet } from "react-helmet";
 
 const ReadMail = () => {

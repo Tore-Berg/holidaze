@@ -1,26 +1,8 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-import styled from "styled-components";
-import logo from '../../../assets/logo_bottom.png'
+import { StyledFooter, SocialIcons } from "./Footer.styles";
+import logo from "../../../assets/logo_bottom.png";
 
-const StyledFooter = styled.footer`
-  height: auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #f7f7f7;
-  .bottom_logo {
-    margin: 100px auto;
-    width: 150px;
-  }
-`;
-const SocialIcons = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto;
-`;
 const Footer = () => {
   return (
     <StyledFooter>

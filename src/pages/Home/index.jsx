@@ -1,56 +1,20 @@
 import React from "react";
-import backgroundImage from "../../assets/home-bg.jpg";
-import styled from "styled-components";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { BASE_URL, ACCOMMODATION_PATH } from "../../components/constants/api";
+import { BASE_URL, ACCOMMODATION_PATH } from "../../constants/api";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import Heading from "../../components/layout/headings/Heading";
 import SubHeading from "../../components/layout/headings/SubHeading";
 import LoaderIndicator from "../../components/common/LoaderIndicator";
 import { Helmet } from "react-helmet";
+import {
+  HeroSection,
+  FeaturedBg,
+  FeaturedCard,
+  FeaturedGrid,
+} from "./Home.styles";
 
-const HeroSection = styled.div`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
-  min-height: 90vh;
-  background-image: url(${backgroundImage});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-`;
-const FeaturedGrid = styled.div`
-  width: 1100px;
-  max-width: 90%;
-  margin: 50px auto;
-  gap: 10px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-`;
-const FeaturedCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  & img {
-    border-radius: 10px;
-  }
-`;
-const FeaturedBg = styled.div`
-  background-size: cover;
-  background-position: center center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 300px;
-  border-radius: 10px;
-`;
 const Home = () => {
   const [places, setPlaces] = useState([]);
   const [loading, setLoading] = useState(true);

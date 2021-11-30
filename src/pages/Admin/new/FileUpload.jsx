@@ -2,17 +2,17 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import { useState } from "react";
-import useAxios from "../../../components/hooks/useAxios";
-import { Button } from "../../../components/styles/Button";
+import useAxios from "../../../hooks/useAxios";
+import { Button } from "../../../styles/Button";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { ACCOMMODATION_PATH } from "../../../components/constants/api";
+import { ACCOMMODATION_PATH } from "../../../constants/api";
 import FormSuccess from "../../../components/common/FormSuccess";
 import {
   StyledForm,
   StyledFormWrapper,
   RadioButtons,
-} from "../../../components/styles/FormStyle";
+} from "../../../styles/FormStyle";
 
 const schema = yup.object().shape({
   title: yup.string().required("Please enter the title"),

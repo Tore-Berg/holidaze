@@ -1,61 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { FaWindowClose } from "react-icons/fa";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
-import { BASE_URL, ENQUIRY_PATH } from "../../components/constants/api";
+import { BASE_URL, ENQUIRY_PATH } from "../../constants/api";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {
-  StyledForm,
-  StyledFormWrapper,
-} from "../../components/styles/FormStyle";
-import styled from "styled-components";
+import { StyledForm, StyledFormWrapper } from "../../styles/FormStyle";
+import { Modal, ModalBg, CloseIcon, Overlay } from "./Enquiry.styles";
 import FormSuccess from "../../components/common/FormSuccess";
-import { Button } from "../../components/styles/Button";
+import { Button } from "../../styles/Button";
 import LoaderIndicator from "../../components/common/LoaderIndicator";
 
-const Modal = styled.div`
-  z-index: 1000;
-  min-height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  color: white;
-`;
-const ModalBg = styled.div`
-  width: 100%;
-  height: 200px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 10px auto;
-  border-radius: 10px;
-`;
-const CloseIcon = styled(FaWindowClose)`
-  position: absolute;
-  color: #fff;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  &:hover {
-    color: 0.3;
-  }
-`;
-const Overlay = styled.div`
-  background: #000;
-  opacity: 0.95;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-`;
 const Enquiry = ({ open, onClose, title, image }) => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);

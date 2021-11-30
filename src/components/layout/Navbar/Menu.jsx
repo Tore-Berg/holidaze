@@ -1,44 +1,11 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { StyledLink, Ul } from "./Menu.styled";
 import { useContext } from "react";
 import AuthContext from "../../../context/AuthContext";
 import { useHistory } from "react-router";
-import { Button, DangerButton } from "../../styles/Button";
+import { Button, DangerButton } from "../../../styles/Button";
 import { useState } from "react";
-
-const StyledLink = styled(NavLink)`
-  padding: 0px 10px;
-`;
-const Ul = styled.ul`
-  list-style: none;
-  display: flex;
-  /* flex-flow: row nowrap; */
-  align-items: center;
-  padding: 0;
-  z-index: 1000;
-  li {
-    padding: 18px 10px;
-  }
-
-  @media (max-width: 768px) {
-    flex-flow: column;
-    justify-content: center;
-    background-color: #0d2538;
-    position: fixed;
-    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 300px;
-    margin-top: 0;
-    padding-top: 3.5rem;
-    transition: transform 0.3s ease-in-out;
-    li {
-      color: #fff;
-    }
-  }
-`;
 
 const Menu = ({ open }) => {
   const [scrolledlink, setScrolledLink] = useState(false);

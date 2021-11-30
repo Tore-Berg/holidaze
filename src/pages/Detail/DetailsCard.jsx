@@ -1,15 +1,7 @@
 import React from "react";
-import styled from "styled-components";
+import { Description } from "./Details.styles";
 import Heading from "../../components/layout/headings/Heading";
 import ImageSlider from "./ImageSlider";
-
-const Description = styled.div`
-  display: block;
-  & span {
-    font-size: 12px;
-    color: gray;
-  }
-`;
 
 const DetailsCard = ({ ...place }) => {
   const {
