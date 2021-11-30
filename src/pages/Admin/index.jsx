@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import { useHistory } from "react-router";
 import AuthContext from "../../context/AuthContext";
 import AdminMenu from "./AdminMenu";
+import { Helmet } from "react-helmet";
 
-const Admin = ({ children }) => {
+const Admin = () => {
   const history = useHistory();
   const [auth] = useContext(AuthContext);
 
@@ -12,8 +13,10 @@ const Admin = ({ children }) => {
   }
   return (
     <>
+      <Helmet>
+        <title>Holidaze | Admin</title>
+      </Helmet>
       <AdminMenu />
-      {children ? children : <p>Select an action</p>}
     </>
   );
 };

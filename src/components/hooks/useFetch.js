@@ -32,7 +32,7 @@ const useFetch = (url) => {
     return () => cleanUp.abort();
   }, [url]);
 
-  return { data, loading, error };
+  return { data, loading, error};
 };
 
 export default useFetch;

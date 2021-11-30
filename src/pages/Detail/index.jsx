@@ -1,34 +1,56 @@
 import { useParams } from "react-router-dom";
 import { BASE_URL, ACCOMMODATION_PATH } from "../../components/constants/api";
 import useFetch from "../../components/hooks/useFetch";
+import Enquiry from "../Enquiry";
+import { useState } from "react";
+import DetailsCard from "./DetailsCard";
+import { Button } from "../../components/styles/Button";
+import styled from "styled-components";
+import GoBack from "../../components/common/GoBack";
+import LoaderIndicator from "../../components/common/LoaderIndicator";
+import { Helmet } from "react-helmet";
+
+const DetailsWrapper = styled.div`
+  max-width: 90%;
+  margin: auto;
+`;
 
 const Detail = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const { id } = useParams();
 
   const {
     data: place,
     loading,
     error,
-  } = useFetch(BASE_URL + ACCOMMODATION_PATH + id);
+  } = useFetch(`${BASE_URL}/${ACCOMMODATION_PATH}/${id}`);
   return (
-    <div className="details-wrapper">
-      {loading && <div className="loader">Loading...</div>}
-      {error && <div className="error">{error}</div>}
-      {place && (
-        <div key={place.id} className="place-card">
-          <h1>{place.title}</h1>
-          <img
-            src={place.image_url}
-            className="place-image"
-            alt={`${place.title}`}
+    <>
+      <Helmet>
+        <title>Holidaze | Details</title>
+        <meta
+          name="description"
+          content="We at Holidaze will make sure you find hotels, guesthouses and BnB accommodations in just a few clicks. Here you can see all of the details."
+        />
+      </Helmet>
+      <DetailsWrapper>
+        {loading && <LoaderIndicator />}
+        {error && <div className="error">{error}</div>}
+        {place && <DetailsCard {...place} />}
+        {place && <Button onClick={() => setIsOpen(true)}>Send Enquiry</Button>}
+        {place && (
+          <Enquiry
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
+            title={place.title}
+            category={place.category}
+            image={place.featured_media.formats.small.url}
           />
-          <span>
-            <strong>${place.price}</strong>
-          </span>
-          <p>{place.description}</p>
-        </div>
-      )}
-    </div>
+        )}
+      </DetailsWrapper>
+      <GoBack />
+    </>
   );
 };
 export default Detail;

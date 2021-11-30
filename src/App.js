@@ -8,15 +8,17 @@ import Login from "./pages/Login";
 import Admin from "./pages/Admin";
 import Detail from "./pages/Detail";
 import Enquiry from "./pages/Enquiry";
-import ReadEnquiries from "./pages/Admin/enquiries/ReadEnquiries";
+import ReadEnquiries from "./pages/Admin/enquiries/";
 import { AuthProvider } from "./context/AuthContext";
 import AddNew from "./pages/Admin/new/AddNew";
-import ReadMail from "./pages/Admin/mail/ReadMail";
+import ReadMail from "./pages/Admin/mail/";
+import GlobalStyles from "./components/styles/Global";
 
 function App() {
   return (
     <AuthProvider>
       <Router>
+        <GlobalStyles />
         <Layout>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -27,7 +29,11 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/admin/new" component={AddNew} />
-            <Route exact path="/admin/read-enquiries"component={ReadEnquiries} />
+            <Route
+              exact
+              path="/admin/read-enquiries"
+              component={ReadEnquiries}
+            />
             <Route exact path="/admin/read-mail" component={ReadMail} />
           </Switch>
         </Layout>

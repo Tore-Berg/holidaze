@@ -1,28 +1,43 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router";
 import useAxios from "../../../components/hooks/useAxios";
+import { TrashCan } from "../../../components/styles/Button";
 
-const DeleteMessage = ({ id }) => {
+const DeleteMessage = ({ id, updateList }) => {
   const [error, setError] = useState(null);
+  const [deleting, setDeleting] = useState(false);
   const http = useAxios();
-  const history = useHistory();
   const url = `messages/${id}`;
 
   const handleDelete = async () => {
+    setDeleting(true);
     const confirmDelete = window.confirm("Delete this message?");
     if (confirmDelete) {
       try {
         await http.delete(url);
-        history.push("/admin");
       } catch (error) {
         setError(error);
       }
+      try {
+        const newData = await http.get("messages");
+        console.log(newData);
+        updateList(newData.data);
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
+  if (deleting) {
+    return <div>Deleting message...</div>;
+  }
+  if (error) {
+    return <div>{error}</div>;
+  }
   return (
-    <button type="button" className="btn-danger" onClick={handleDelete}>
-      {error ? "Error" : "Delete Message"}
-    </button>
+    <>
+      <div>
+        <TrashCan size={30} type="button" onClick={handleDelete}></TrashCan>
+      </div>
+    </>
   );
 };
 

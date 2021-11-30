@@ -10,16 +10,17 @@ const Wrapper = styled.div`
 const SearchWrapper = styled.div`
   margin-top: 105px;
   display: flex;
-  width: 100%auto;
+  width: 100%;
 `;
 const Input = styled.input`
+font-family: inherit;
   background-color: white;
   border: 0;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
   font-size: 18px;
   padding: 15px;
-  height: 30px;
+  height: 60px;
   width: 100%;
   &:focus {
     outline: none;
@@ -29,20 +30,20 @@ const Input = styled.input`
 const SearchIcon = styled.div`
   height: 60px;
   width: 50px;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
   background-color: white;
   color: gray;
   display: grid;
   place-items: center;
   cursor: pointer;
   & svg {
-    font-size: 35px;
+    font-size: 25px;
     margin-right: 10px;
   }
 `;
 
-const SearhcResult = styled.div`
+const SearchResult = styled.div`
   margin-top: 5px;
   width: 100%;
   height: 200px;
@@ -111,7 +112,7 @@ const SearchBar = ({ placeholder, data }) => {
         </SearchIcon>
       </SearchWrapper>
       {filteredData.length !== 0 && (
-        <SearhcResult>
+        <SearchResult>
           {filteredData.slice(0, 20).map((value) => {
             return (
               <Link
@@ -123,7 +124,7 @@ const SearchBar = ({ placeholder, data }) => {
               </Link>
             );
           })}
-        </SearhcResult>
+        </SearchResult>
       )}
     </Wrapper>
   );
