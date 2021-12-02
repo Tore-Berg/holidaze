@@ -28,7 +28,7 @@ const Home = () => {
         console.log(response.data);
       } catch (error) {
         console.log(error);
-        setError(error.toString("There was an error"));
+        setError(error.toString());
       } finally {
         setLoading(false);
       }
@@ -40,7 +40,7 @@ const Home = () => {
     return <LoaderIndicator />;
   }
   if (error) {
-    return <div>Oh NO! Error</div>;
+    return <div>{error}</div>;
   }
 
   return (

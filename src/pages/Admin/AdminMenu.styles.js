@@ -12,8 +12,8 @@ const StyledLink = styled(Link)`
   margin: auto;
   transition: all ease-in-out .5s;
   &:hover {
-    transform: scale(1.5);
-    color: red;
+    transform: scale(1.1);
+    color: gold;
   }
 `;
 

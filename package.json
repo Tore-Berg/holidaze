@@ -1,6 +1,7 @@
 {
   "name": "final_exam",
   "version": "0.1.0",
+  "homepage": "https://toreberg.dev/holidaze",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^2.8.2",

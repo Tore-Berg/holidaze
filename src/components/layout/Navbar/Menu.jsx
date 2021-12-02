@@ -24,7 +24,7 @@ const Menu = ({ open }) => {
     const confirmLogout = window.confirm("Are you sure you want to log out?");
     if (confirmLogout) {
       setAuth(null);
-      history.push("/login");
+      history.push("/holidaze/login");
     }
   };
 

@@ -17,7 +17,7 @@ import GlobalStyles from "./styles/Global";
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename="/holidaze">
         <GlobalStyles />
         <Layout>
           <Switch>

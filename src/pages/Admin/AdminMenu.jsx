@@ -9,13 +9,13 @@ const AdminMenu = () => {
       <Heading title="Admin Menu" />
       <AdminNavigation>
         <StyledLink to="/admin/new">
-          <FaLaptopHouse size={120} />
+          <FaLaptopHouse size={100} />
         </StyledLink>
         <StyledLink to="/admin/read-mail">
-          <FaMailBulk size={120} />
+          <FaMailBulk size={100} />
         </StyledLink>
         <StyledLink to="/admin/read-enquiries">
-          <FaCommentDots size={120} />
+          <FaCommentDots size={100} />
         </StyledLink>
       </AdminNavigation>
     </>
